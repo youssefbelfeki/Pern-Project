@@ -1,6 +1,7 @@
 
 const express = require('express')
 const bookRouter = require('./app/routes/books.routes')
+const authRouter = require('./app/routes/auth.routes')
 
 const app = express()
 
@@ -12,6 +13,7 @@ app.get('/', (req, res) =>{
 })
 
 app.use(bookRouter)
+app.use(authRouter)
 app.listen(3005, () => {
   console.log('Listening on 127.0.0.1:3000');
 });
